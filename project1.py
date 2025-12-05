@@ -8,3 +8,5 @@
    |  $50       |  6+        | 3hr+       |  7:00      |  far away  |
    |____________|____________|____________|____________|____________|
 """
+
+options = {"movie theater","cards","movie at home","lunch out","concert","shopping"}
