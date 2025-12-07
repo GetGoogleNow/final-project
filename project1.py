@@ -5,7 +5,7 @@
 ##|____________|____________|____________|____________|____________|
 ##|  $20       |  4         | 2hr        |  5:00      |  in town   |
 ##|____________|____________|____________|____________|____________|
-##|  $50+      |  6+        | 3hr+       |  7:00+     |  far away  |
+##|  $50+      |  6+        | 3hr+       |  9:00+     |  far away  |
 ##|____________|____________|____________|____________|____________|
 
 print(""" 
@@ -50,11 +50,11 @@ inputs = def gather():
             du()
    if time~=None
       def ti():
-         t=input("Enter your time constraint or press enter to skip: (12:00) (5:00) (7:00+)")
-         if int(t)==12 or int(t)==5 or int(t)==7 or t=="":
+         t=input("Enter your time constraint or press enter to skip: (12:00) (5:00) (9:00+)")
+         if int(t)==12 or int(t)==5 or int(t)==9 or t=="":
             time=int(t)
-         elif t=="7+":
-            time=7
+         elif t=="9+":
+            time=9
          else:
             print("Invalid input: try entering without the ':00'")
             ti()
@@ -81,18 +81,69 @@ for i in inputs:
                         if y in options:
                               options.remove(y)
             elif i>=10 and i<20:
-                  for y in {"lunch out","dinner out","move at home","shopping"}
+                  for y in {"movie at home","lunch out","concert","shopping","dinner out","videogame","escape room"}
                         if y in options:
-                              optioms.remove(y)
+                              options.remove(y)
       elif x==2:
-            if i>=4 and i<6:
-                  for y in {"escape room"}:
+            if i>=6:
+                  for y in {"lunch out","concert","dinner out"}:
+                        if y in options:
+                              options.remove(y)
+            elif i>=4 and i<6:
+                  for y in {"concert"}:
                         if y in options:
                               options.remove(y)
             elif i>=2 and i<4:
-                   for y in {""}
+                   for y in {"cards","videogame","escape room"}:
+                         if y in options:
+                               options.remove(y)
       elif x==3:
-
+            if i>=3:
+                  for y in {"lunch out","shopping","dinner out"}:
+                        if y in options:
+                              options.remove(y)
+            elif i>=2 and i<3:
+                  for y in {"movie theater","cards","movie at home","shopping","videogame","escape room"}:
+                        if y in options:
+                              options.remove(y)
+            elif i>=1 and i<2:
+                  for y in {"movie theater","cards","movie at home","concert","videogame","escape room"}:
+                        if y in options:
+                              options.remove(y)
       elif x==4:
-
+            if i==12:
+                  for y in {"movie theater","concert","dinner out","escape room"}:
+                        if y in options:
+                              options.remove(y)
+            elif i==5:
+                  for y in {"movie theater","cards","movie at home","lunch out","concert","shopping","dinner out","videogame","escape room"}:
+                        if y in options:
+                              options.remove(y)
+            elif i==9:
+                  for y in {"lunch out","shopping","dinner out","escape room"}:
+                        if y in options:
+                              options.remove(y)
       elif x==5:
+            if i==1:
+                  for y in {"movie theater","lunch out","concert","shopping","dinner out","escape room"}:
+                        if y in options:
+                              options.remove(y)
+            elif i==2:
+                  for y in {"cards","movie at home","concert","videogame","escape room"}:
+                        if y in options:
+                              options.remove(y)
+            elif i==3:
+                  for y in {"cards","movie at home","videogame"}:
+                        if y in options:
+                              options.remove(y)
+
+q
+if len(options)>=1:
+      q="Your options are: "
+      for a in options:
+            q+=a+" "
+else
+      q="No options available based on your constraints"
+      
+print(q)
+      
