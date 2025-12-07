@@ -14,14 +14,14 @@ print("""
       
       """)
 
-options = {"movie theater","cards","movie at home","lunch out","concert","shopping","dinner out"}
+options = {"movie theater","cards","movie at home","lunch out","concert","shopping","dinner out","videogame","escape room"}
 
 inputs = def gather():
    price, members, duration, time, location
    if price~=None:
       def pr():
-         p=input("Enter your available budjet or press enter to skip: ($10) ($20) ($50+)")
-         if int(p)==10 or int(p)==20 or int(p)==50 or p=="":
+         p=input("Enter your available budjet or press enter to skip: ")
+         if int(p)>=0 or p=="":
             price=int(p)
          elif p=="50+":
             price=50
@@ -72,3 +72,27 @@ inputs = def gather():
             lo()
    return {price, members, duration, time, location}
 
+x=0
+for i in inputs:
+      x+=1
+      if x==1:
+            if i>=20 and i<50:
+                  for y in {"videogame","concert","escape room"}:
+                        if y in options:
+                              options.remove(y)
+            elif i>=10 and i<20:
+                  for y in {"lunch out","dinner out","move at home","shopping"}
+                        if y in options:
+                              optioms.remove(y)
+      elif x==2:
+            if i>=4 and i<6:
+                  for y in {"escape room"}:
+                        if y in options:
+                              options.remove(y)
+            elif i>=2 and i<4:
+                   for y in {""}
+      elif x==3:
+
+      elif x==4:
+
+      elif x==5:
